@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://outils.vread.fr/sans-tic/sitemap.xml

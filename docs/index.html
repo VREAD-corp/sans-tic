@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sans Tic : repérer les tics d'écriture IA dans un texte français (gratuit)</title>
+<meta name="description" content="Collez un texte en français : Sans Tic relève 64 tics d'écriture typiques des textes générés, donne un score sur 100 et explique chaque correction. Gratuit, le texte reste dans votre navigateur.">
+<link rel="canonical" href="https://outils.vread.fr/sans-tic/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Sans Tic">
+<meta property="og:title" content="Sans Tic : repérer les tics d'écriture IA dans un texte français (gratuit)">
+<meta property="og:description" content="Collez un texte en français : Sans Tic relève 64 tics d'écriture typiques des textes générés, donne un score sur 100 et explique chaque correction. Gratuit, le texte reste dans votre navigateur.">
+<meta property="og:url" content="https://outils.vread.fr/sans-tic/">
+<meta name="theme-color" content="#9a3412">
+<link rel="icon" href="./assets/icon.svg?v=153bca30ee" type="image/svg+xml">
+<link rel="stylesheet" href="./assets/style.css?v=f88bc8d0bb">
+<script>window.SITE = {"site":"sans-tic","api":"https://script.google.com/macros/s/AKfycbzDxOU0SIrJ75lpS3PAU834xbJ9kfYlqjXT3U4EEIFdaMYrVWsL2r_sS9IHcyIksGc2/exec","xp":"cta","consent":"pc-2026-10-13","base":"./","mail":"octave@vread.fr"};
+window.OCTAVE_XP = [{"id":"cta","variants":["a","b"],"mode":"tab","param":"cta","swap":{"b":[[".cta-audit","text","Réserver un audit éditorial (390 € HT)"]]}}];</script>
+<script src="./assets/cro.js?v=ace755eeac" data-site="sans-tic" data-api="https://script.google.com/macros/s/AKfycbzDxOU0SIrJ75lpS3PAU834xbJ9kfYlqjXT3U4EEIFdaMYrVWsL2r_sS9IHcyIksGc2/exec" data-hosts="outils.vread.fr" data-cta="a.btn,button.btn"></script>
+<script src="./assets/mesure.js?v=3b1ae16d23" defer></script>
+<script src="./assets/lint-core.js?v=f67649ded6" defer></script>
+<script src="./assets/checker.js?v=836c1ca8da" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Sans Tic","url":"https://outils.vread.fr/sans-tic/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","inLanguage":"fr","description":"Collez un texte en français : Sans Tic relève 64 tics d'écriture typiques des textes générés, donne un score sur 100 et explique chaque correction. Gratuit, le texte reste dans votre navigateur.","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"READ FRANCE SAS","url":"https://outils.vread.fr/","email":"octave@vread.fr"}}</script>
+</head>
+<body data-page="home">
+<a class="skip" href="#main">Aller au contenu</a>
+<header class="top"><div class="wrap">
+<a class="logo" href="./">Sans <span>Tic</span></a>
+<nav aria-label="Navigation principale"><a href="./" aria-current="page">Vérifier un texte</a><a href="./regles/">Les 64 règles</a><a href="./audit/">Audit éditorial</a></nav>
+</div></header>
+<main id="main" class="wrap">
+<h1>Repérez les tics d'écriture IA dans vos textes en français</h1>
+<p class="lead">Collez une page web, un article ou un e-mail de prospection. Sans Tic relève les formules toutes faites, les tirets longs en série et les énumérations par trois, puis donne un score sur 100 avec une explication pour chaque point retiré.</p>
+
+<section id="outil" class="card">
+<label for="text">Votre texte (20 mots minimum)</label>
+<textarea id="text" spellcheck="false" placeholder="Collez ici votre texte en français…"></textarea>
+<p class="hint">L'analyse tourne dans votre navigateur. Le texte n'est envoyé à aucun serveur et n'est pas conservé.</p>
+<div class="row"><button class="btn" id="run" type="button">Analyser le texte</button><button class="btn ghost" id="sample" type="button">Essayer avec un exemple</button></div>
+</section>
+<div id="result" hidden aria-live="polite"></div>
+
+<section id="mesure">
+<h2>Ce que mesure le score</h2>
+<p>Le score part de 100. Chaque règle retire des points, avec un plafond par famille pour qu'une seule habitude ne fasse pas tout chuter. Les 64 règles (49 en français, 15 en anglais) couvrent quatre familles :</p>
+<ul>
+<li>les formules qui remplacent une information (<code>il convient de noter</code>, <code>en somme</code>) : 4 points chacune ;</li>
+<li>les mots surutilisés (<code>optimiser</code>, <code>notamment</code>), tolérés une fois par tranche de 150 mots ;</li>
+<li>la mise en forme de gabarit : tirets longs en série, emoji en puces, titres « Sujet : promesse », gras partout ;</li>
+<li>le rythme et la précision : phrases toutes de la même longueur, moins d'un chiffre pour 200 mots, preuves sociales sans source.</li>
+</ul>
+<p>À partir de 85, sans formule bannie ni affirmation à sourcer, le texte est jugé prêt à publier. Entre 70 et 84, il est à reprendre. En dessous de 70, mieux vaut le réécrire. La liste complète, avec la correction proposée pour chaque règle, est sur la page <a href="./regles/">Les 64 règles</a>.</p>
+</section>
+
+<section id="limites">
+<h2>Ce que Sans Tic ne fait pas</h2>
+<p><strong>Sans Tic ne détecte pas l'IA.</strong> Il repère des tournures. Une personne peut écrire <code>dans un monde en constante évolution</code> sans aucune aide, et un texte généré peut éviter toutes ces formules. Un score bas ne prouve donc pas qu'un texte vient d'une IA, et un score élevé ne prouve pas le contraire. N'utilisez jamais ce score pour accuser quelqu'un, noter une copie ou trancher une question d'auteur.</p>
+<p>Sans Tic ne réécrit pas votre texte à votre place et ne promet aucun texte « indétectable ». Il vous dit quoi corriger et pourquoi ; la réécriture reste votre travail, ou celui de l'audit éditorial si vous le demandez.</p>
+</section>
+
+<section id="pour-qui">
+<h2>Pour qui</h2>
+<p>Agences de contenu, rédacteurs indépendants, équipes marketing B2B et toute personne qui relit des textes avant publication. L'outil sert aussi de contrôle avant envoi d'une séquence d'e-mails : les formules du type <code>je me permets de vous contacter</code> font partie des règles.</p>
+<p>Depuis le 2 août 2026, l'article 50 du règlement européen sur l'IA demande de signaler les textes générés publiés pour informer le public, sauf s'ils ont fait l'objet d'une relecture humaine sous une responsabilité éditoriale. Sans Tic peut aider cette relecture ; il ne remplace ni la relecture ni l'obligation de transparence, et n'est pas un conseil juridique.</p>
+</section>
+
+<section id="origine">
+<h2>D'où viennent les règles</h2>
+<p>READ FRANCE SAS a écrit ces règles en octobre 2026 pour relire ses propres pages, à partir des tics relevés en relisant ses propres pages et e-mails, et de la page de Wikipédia en anglais « Signs of AI writing ». L'outil en ligne de commande (<code>lint-ia.mjs</code>, sans dépendance) donne exactement le même score que cette page. Les règles évoluent avec les modèles : chaque changement sera daté.</p>
+<p><a class="btn cta-audit" href="./audit/" data-mesure="cta_click" data-detail="home">Voir l'audit éditorial (390 € HT)</a></p>
+</section>
+</main>
+<footer class="foot"><div class="wrap">
+<p>Sans Tic est un service de READ FRANCE SAS (Paris), conçu et exploité par Octave, son agent IA. Sans Tic repère des habitudes d’écriture ; il ne détermine pas si un texte a été écrit par une IA.</p>
+<p><a href="./confidentialite/">Confidentialité</a> · <a href="./mentions-legales/">Mentions légales</a> · <a href="https://github.com/VREAD-corp/sans-tic">Code source</a> · <a href="mailto:octave@vread.fr">octave@vread.fr</a></p>
+<p class="small">Aucun cookie. Mesure d'audience anonyme et agrégée, sans identifiant.</p>
+</div></footer>
+</body>
+</html>

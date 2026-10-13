@@ -1,0 +1,109 @@
+<!--meta {"path": "/regles/", "page": "rules", "title": "Les 64 tics d'écriture IA relevés par Sans Tic, avec la correction", "description": "Liste des 64 règles de Sans Tic : formules toutes faites, mots surutilisés, tirets longs, énumérations par trois. Pour chaque tic, la correction proposée et le nombre de points retirés."}-->
+<h1>Les 64 règles de Sans Tic</h1>
+<p class="lead">Voici chaque tournure relevée par le vérificateur, avec la correction proposée. Les motifs sont écrits en version simplifiée : les parenthèses donnent les variantes, « … » remplace quelques mots.</p>
+
+<section id="bareme">
+<h2>Barème</h2>
+<div class="tablewrap"><table>
+<tr><th>Famille</th><th>Points retirés</th><th>Plafond</th></tr>
+<tr><td>Formule à bannir</td><td>4 par occurrence</td><td>40</td></tr>
+<tr><td>Mot à doser</td><td>1,5 au-delà d'une occurrence par 150 mots</td><td>15</td></tr>
+<tr><td>Tiret long (—)</td><td>1,5 au-delà d'un tiret par 400 mots</td><td>15</td></tr>
+<tr><td>Énumération « A, B et C »</td><td>1,5 au-delà d'une par 150 mots (plus une)</td><td>10</td></tr>
+<tr><td>Emoji en puce ou en titre</td><td>3 par ligne</td><td>15</td></tr>
+<tr><td>Affirmation à sourcer (preuve sociale, « x3 », témoignage)</td><td>3 par occurrence</td><td>9</td></tr>
+<tr><td>Moins de 0,5 nombre pour 100 mots (texte de 120 mots et plus)</td><td>8</td><td>8</td></tr>
+<tr><td>Paragraphes d'une phrase (8 paragraphes et plus, 70 % courts)</td><td>8</td><td>8</td></tr>
+<tr><td>Longueur des phrases trop régulière (coefficient de variation sous 0,35)</td><td>5</td><td>5</td></tr>
+</table></div>
+<p>Les autres familles (titres, gras, points d'exclamation, hashtags, phrases qui commencent pareil) retirent entre 1 et 2 points, plafonnés entre 5 et 8. Une ligne qui contient <code>lint-ia-ignore</code> n'est pas analysée : pratique pour une citation.</p>
+</section>
+
+<section id="fr-ban">
+<h2>Formules à bannir en français (35 règles)</h2>
+<div class="tablewrap"><table><tr><th>Motif</th><th>Correction proposée</th></tr>
+<tr><td><code>dans un monde (en (constante|perpétuelle|pleine) (évolution|mutation)|où|qui|de plus en plus)</code></td><td>Supprimer. Ouvrir sur le fait ou le problème du lecteur.</td></tr>
+<tr><td><code>en (constante|perpétuelle) (évolution|mutation)</code></td><td>Dire ce qui change, quand, et de combien.</td></tr>
+<tr><td><code>à l'ère (du numérique|de l'ia|de l'intelligence artificielle|digitale)</code></td><td>Supprimer, ou dater (« depuis 2024 »).</td></tr>
+<tr><td><code>dans le (paysage|contexte) (actuel|numérique|concurrentiel)</code></td><td>Supprimer, ou nommer le marché et le chiffre.</td></tr>
+<tr><td><code>il est (essentiel|crucial|primordial|important|indispensable|capital|fondamental) (de|d'|que)</code></td><td>Dire quoi faire, et pourquoi (un fait).</td></tr>
+<tr><td><code>il convient de (noter|souligner|rappeler|préciser|mentionner)</code></td><td>Commencer par l'affirmation.</td></tr>
+<tr><td><code>force est de constater</code></td><td>Supprimer.</td></tr>
+<tr><td><code>n'hésitez (surtout )?pas à</code></td><td>Verbe direct (« Répondez », « Téléchargez ») ou rien.</td></tr>
+<tr><td><code>plongeons(-nous)?|plong(er|ez|eons) (au cœur|dans l'univers)</code></td><td>Supprimer ; entrer dans le sujet.</td></tr>
+<tr><td><code>en somme|en conclusion|pour conclure|en définitive|en résumé|pour résumer|vous l'aurez compris|le mot de la fin</code></td><td>Finir sur la prochaine action ou un fait nouveau, pas un résumé.</td></tr>
+<tr><td><code>dans cet article,? (nous )?(allons|verrons|explorerons|découvrirons)</code></td><td>Répondre tout de suite à la question.</td></tr>
+<tr><td><code>tout ce que vous devez savoir|(le )?guide (ultime|complet|définitif)</code></td><td>Titre qui dit la réponse ou le périmètre exact.</td></tr>
+<tr><td><code>sans plus attendre</code></td><td>Supprimer.</td></tr>
+<tr><td><code>incontournables?</code></td><td>Dire pourquoi c'est utile, ou supprimer.</td></tr>
+<tr><td><code>(un |une |de )?véritables? (levier|atout|révolution|game[- ]changer|pilier|enjeu|allié|tournant|mine d'or|casse-tête)</code></td><td>Supprimer « véritable » et nommer l'effet chiffré.</td></tr>
+<tr><td><code>boost(er|ez|e|é|ée|és|ées|ons|s|ing|ed)?</code></td><td>« augmenter de X % », « faire passer de A à B ».</td></tr>
+<tr><td><code>révolutionn(er|ez|e|ent|ant|aire|aires)|changer la donne|game[- ]chang(er|ing)</code></td><td>Décrire le changement concret.</td></tr>
+<tr><td><code>propuls(er|ez|e|ent)|sublim(er|ez|e|ent)|transcend(er|ez|e)</code></td><td>Verbe concret : publier, envoyer, réduire…</td></tr>
+<tr><td><code>leviers? (de croissance|de performance|stratégiques?|puissants?|essentiels?|majeurs?)</code></td><td>Nommer le mécanisme.</td></tr>
+<tr><td><code>pierre angulaire|fer de lance|clé de voûte|maître[- ]mot|le nerf de la guerre</code></td><td>Dire la chose simplement.</td></tr>
+<tr><td><code>que vous soyez … ou </code></td><td>Nommer le lecteur visé (un seul).</td></tr>
+<tr><td><code>navigu(er|ez|ons|ant) (dans|à travers|au sein|entre|les)</code></td><td>« comprendre », « s'y retrouver », « trier ».</td></tr>
+<tr><td><code>synergies?|holistiques?|paradigmes?</code></td><td>Supprimer ou nommer la collaboration concrète.</td></tr>
+<tr><td><code>(jou(e|ent|er)) un rôle (clé|crucial|essentiel|central|majeur|déterminant|primordial)</code></td><td>Dire ce que ça fait.</td></tr>
+<tr><td><code>soulign(e|ent|er|ant) l'importance|met(tre|tent|tant)? en (lumière|exergue)</code></td><td>« montre », ou la donnée elle-même.</td></tr>
+<tr><td><code>un atout (majeur|précieux|indéniable|de taille)|riches? et variée?s?|un jeu d'enfant</code></td><td>Supprimer ou prouver.</td></tr>
+<tr><td><code>prêts? à (booster|transformer|révolutionner|propulser|passer|faire passer)|(au|le) niveau supérieur</code></td><td>CTA littéral : « Télécharger le tableau (gratuit) ».</td></tr>
+<tr><td><code>j'espère que (ce (message|mail|e-mail|courriel) vous trouve|vous allez bien|vous vous portez bien|vous passez)</code></td><td>Première ligne = le fait qui justifie l'e-mail.</td></tr>
+<tr><td><code>je me permets de vous (contacter|écrire|solliciter|relancer)</code></td><td>Entrer dans le sujet.</td></tr>
+<tr><td><code>(une |la )?(petite )?question rapide</code></td><td>Poser la question.</td></tr>
+<tr><td><code>(et vous|qu'en pensez-vous|vous en pensez quoi|vous êtes d'accord) ?</code></td><td>Finir sur une info ou une question précise, pas un appât.</td></tr>
+<tr><td><code>reli(sez|re) (ça|cette phrase|bien)</code></td><td>Supprimer.</td></tr>
+<tr><td><code>ce n'est pas (juste |seulement |qu'|que |simplement )?…([,;:—–-]|.) *c'est</code></td><td>Dire Y directement.</td></tr>
+<tr><td><code>il ne s'agit pas (seulement |simplement |juste )?d[e']…[,;:—–.-] *(il s'agit|c'est)</code></td><td>Dire Y directement.</td></tr>
+<tr><td><code>pas de …. pas de …. (juste|seulement|que)</code></td><td>Phrase normale.</td></tr>
+</table></div>
+</section>
+
+<section id="fr-limit">
+<h2>Mots à doser en français (14 règles)</h2>
+<div class="tablewrap"><table><tr><th>Motif</th><th>Correction proposée</th></tr>
+<tr><td><code>véritables?</code></td><td>Supprimer (presque toujours inutile).</td></tr>
+<tr><td><code>leviers?</code></td><td>« moyen », « outil », ou le nom de la chose.</td></tr>
+<tr><td><code>optimis(er|ez|ons|ation|ations|e|é|ée|és|ées)</code></td><td>« réduire », « accélérer », « corriger » + chiffre.</td></tr>
+<tr><td><code>écosystèmes?|robustes?|innovant(e|es|s)?|intuiti(f|ve|fs|ves)|fluides?|fluidité|sans couture|sans friction</code></td><td>Fait vérifiable à la place de l'adjectif.</td></tr>
+<tr><td><code>témoign(e|ent|er|ant) de|(s'impose|se positionne|se pose|s'affirme) comme</code></td><td>« est », « a ».</td></tr>
+<tr><td><code>valeur ajoutée|au cœur de|en toute sérénité|l'esprit tranquille|en un clin d'œil|clés? en main</code></td><td>Dire le résultat concret.</td></tr>
+<tr><td><code>crucial(e|es|aux)?|essentiel(le|les|s)?|primordial(e|es|aux)?</code></td><td>Montrer l'enjeu (délai, coût, risque).</td></tr>
+<tr><td><code>en outre|par ailleurs|de plus,|néanmoins|notamment|dès lors</code></td><td>Supprimer la transition ou lien précis.</td></tr>
+<tr><td><code>accompagn(er|ons|ez|ement|e|ent)|maximis(er|ez|e)|valoris(er|ez|e)|décupl(er|ez|e)</code></td><td>Verbe concret + objet précis.</td></tr>
+<tr><td><code>découvrez|explorons|explorez</code></td><td>Dire ce que le lecteur obtient.</td></tr>
+<tr><td><code>je reste à votre (entière )?disposition</code></td><td>« Répondez à ce message » ou rien.</td></tr>
+<tr><td><code>(le secret|la clé|la raison|le résultat|la réponse|le problème|la vérité|la suite) ?</code></td><td>Dire la chose directement.</td></tr>
+<tr><td><code>voici (pourquoi|comment|ce que|ce qu'il)|spoiler :|résultat :</code></td><td>Supprimer l'annonce, donner l'info.</td></tr>
+<tr><td><code>non seulement…mais (aussi|également|encore)|pas (seulement|uniquement|juste) …, mais</code></td><td>Une seule affirmation, la plus forte.</td></tr>
+</table></div>
+</section>
+
+<section id="en">
+<h2>Règles pour l'anglais (13 à bannir, 2 à doser)</h2>
+<p>Utiles pour les textes traduits ou les pages bilingues.</p>
+<div class="tablewrap"><table><tr><th>Motif</th><th>Correction proposée</th></tr>
+<tr><td><code>delv(e|es|ed|ing)|tapestry|(a |is a |stands as a )?testament to|underscor(e|es|ed|ing)|pivotal|intricac(y|ies)|intricate|meticulous(ly)?|realm</code></td><td>Plain word: look at, shows, key, careful.</td></tr>
+<tr><td><code>(ever[- ]evolving|ever[- ]changing|rapidly evolving|fast[- ]paced) (world|landscape|environment|market)</code></td><td>Cut. Open with the reader's problem.</td></tr>
+<tr><td><code>in today's (fast[- ]paced |digital |competitive |modern )?(world|age|landscape|era|environment|market)</code></td><td>Cut.</td></tr>
+<tr><td><code>navigat(e|es|ing) (the )?(complexities|landscape|world|challenges|maze)</code></td><td>Understand, sort out, handle.</td></tr>
+<tr><td><code>seamless(ly)?|unlock(s|ed|ing)?|elevat(e|es|ed|ing)|empower(s|ed|ing|ment)?|supercharg(e|es|ed|ing)|revolutioni[sz](e|es|ed|ing)|cutting[- ]edge|unleash(es|ed|ing)?|transformative|holistic|synerg(y|ies)|paradigm</code></td><td>Say what it does, with a number.</td></tr>
+<tr><td><code>harness(es|ing)? the power|foster(s|ed|ing)?|embark(s|ed|ing)? on|nestled|vibrant</code></td><td>Plain verb.</td></tr>
+<tr><td><code>plays? a (crucial|pivotal|key|vital|significant|central) role</code></td><td>Say what it does.</td></tr>
+<tr><td><code>in conclusion|in summary|to sum up|it('s| is) (important|worth|crucial) (to note|noting|to remember)</code></td><td>Cut; end on the next step.</td></tr>
+<tr><td><code>i hope (this|my) (e-?mail |message |note )?finds you well|quick question|i came across your profile</code></td><td>First line = the researched fact.</td></tr>
+<tr><td><code>here's the thing|let that sink in|read that again|the best part ?|agree ?|thoughts ?</code></td><td>Cut the hook / bait.</td></tr>
+<tr><td><code>whether you('re| are) … or |look no further|to the next level|(let's|let us) dive (in|into|deeper)</code></td><td>Name one reader; just start.</td></tr>
+<tr><td><code>(it'?s|this is|that'?s|it is) not (just |only |merely |about )?…[,;:—–.-] *(it'?s|it is|this is)|(isn't|is not) (just |only )?…[,;:—–.-] *it'?s|not (just|only|merely) …,? but</code></td><td>Say Y directly.</td></tr>
+<tr><td><code>no …[.,] no …[.,] just</code></td><td>Normal sentence.</td></tr>
+<tr><td><code>the (result|secret|reason|truth|kicker|catch) ?</code></td><td>Say it directly.</td></tr>
+<tr><td><code>leverag(e|es|ed|ing)|robust|streamlin(e|es|ed|ing)|crucial|comprehensive|moreover|furthermore|additionally|journey|landscape|showcas(e|es|ed|ing)|boasts?|(serves|stands) as|deep dive|here's (why|how|what)|game plan</code></td><td>Plain word, or cut.</td></tr>
+</table></div>
+</section>
+
+<section id="suite">
+<h2>Et ensuite</h2>
+<p>Testez un texte sur la <a href="{{href:/}}">page d'analyse</a>. Pour un site entier, l'<a href="{{href:/audit/}}" data-mesure="cta_click" data-detail="rules">audit éditorial</a> applique ces règles à 10 pages et propose une réécriture pour chaque passage relevé.</p>
+<p class="small">Sources : règles écrites par READ FRANCE SAS (octobre 2026) ; la page de Wikipédia en anglais <a href="https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing">Signs of AI writing</a> a servi de lecture, sans reprise de texte.</p>
+</section>

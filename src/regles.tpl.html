@@ -1,0 +1,49 @@
+<!--meta {"path": "/regles/", "page": "rules", "title": "Les 64 tics d'écriture IA relevés par Sans Tic, avec la correction", "description": "Liste des 64 règles de Sans Tic : formules toutes faites, mots surutilisés, tirets longs, énumérations par trois. Pour chaque tic, la correction proposée et le nombre de points retirés."}-->
+<h1>Les 64 règles de Sans Tic</h1>
+<p class="lead">Voici chaque tournure relevée par le vérificateur, avec la correction proposée. Les motifs sont écrits en version simplifiée : les parenthèses donnent les variantes, « … » remplace quelques mots.</p>
+
+<section id="bareme">
+<h2>Barème</h2>
+<div class="tablewrap"><table>
+<tr><th>Famille</th><th>Points retirés</th><th>Plafond</th></tr>
+<tr><td>Formule à bannir</td><td>4 par occurrence</td><td>40</td></tr>
+<tr><td>Mot à doser</td><td>1,5 au-delà d'une occurrence par 150 mots</td><td>15</td></tr>
+<tr><td>Tiret long (—)</td><td>1,5 au-delà d'un tiret par 400 mots</td><td>15</td></tr>
+<tr><td>Énumération « A, B et C »</td><td>1,5 au-delà d'une par 150 mots (plus une)</td><td>10</td></tr>
+<tr><td>Emoji en puce ou en titre</td><td>3 par ligne</td><td>15</td></tr>
+<tr><td>Affirmation à sourcer (preuve sociale, « x3 », témoignage)</td><td>3 par occurrence</td><td>9</td></tr>
+<tr><td>Moins de 0,5 nombre pour 100 mots (texte de 120 mots et plus)</td><td>8</td><td>8</td></tr>
+<tr><td>Paragraphes d'une phrase (8 paragraphes et plus, 70 % courts)</td><td>8</td><td>8</td></tr>
+<tr><td>Longueur des phrases trop régulière (coefficient de variation sous 0,35)</td><td>5</td><td>5</td></tr>
+</table></div>
+<p>Les autres familles (titres, gras, points d'exclamation, hashtags, phrases qui commencent pareil) retirent entre 1 et 2 points, plafonnés entre 5 et 8. Une ligne qui contient <code>lint-ia-ignore</code> n'est pas analysée : pratique pour une citation.</p>
+</section>
+
+<section id="fr-ban">
+<h2>Formules à bannir en français ({{N_FR_BAN}} règles)</h2>
+<div class="tablewrap"><table><tr><th>Motif</th><th>Correction proposée</th></tr>
+{{FR_BAN}}
+</table></div>
+</section>
+
+<section id="fr-limit">
+<h2>Mots à doser en français ({{N_FR_LIMIT}} règles)</h2>
+<div class="tablewrap"><table><tr><th>Motif</th><th>Correction proposée</th></tr>
+{{FR_LIMIT}}
+</table></div>
+</section>
+
+<section id="en">
+<h2>Règles pour l'anglais ({{N_EN_BAN}} à bannir, {{N_EN_LIMIT}} à doser)</h2>
+<p>Utiles pour les textes traduits ou les pages bilingues.</p>
+<div class="tablewrap"><table><tr><th>Motif</th><th>Correction proposée</th></tr>
+{{EN_BAN}}
+{{EN_LIMIT}}
+</table></div>
+</section>
+
+<section id="suite">
+<h2>Et ensuite</h2>
+<p>Testez un texte sur la <a href="{{href:/}}">page d'analyse</a>. Pour un site entier, l'<a href="{{href:/audit/}}" data-mesure="cta_click" data-detail="rules">audit éditorial</a> applique ces règles à 10 pages et propose une réécriture pour chaque passage relevé.</p>
+<p class="small">Sources : règles écrites par READ FRANCE SAS (octobre 2026) ; la page de Wikipédia en anglais <a href="https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing">Signs of AI writing</a> a servi de lecture, sans reprise de texte.</p>
+</section>
