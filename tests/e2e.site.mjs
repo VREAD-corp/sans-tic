@@ -17,7 +17,7 @@ export async function scenario({ page, go, noHScroll, requests, posted, vp, LIVE
   for (const r of requests.slice(before)) assert.ok(!r.url.includes('7Q9X') && !r.body.includes('7Q9X') && !r.body.includes('constante'), 'text leaked in ' + r.url);
   if (!LIVE) {
     const hit = requests.slice(before).find((r) => r.body.includes('"lint_done"'));
-    // measurement is off outside outils.vread.fr: no hit locally; live with octave_notrack=1 the hit is flagged excluded
+    // measurement is off outside its public hosts: no hit locally; live with octave_notrack=1 the hit is flagged excluded
     assert.equal(hit, undefined);
   }
   await shot('home-result');

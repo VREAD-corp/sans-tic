@@ -3,13 +3,15 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { makeLintCore } from './tools/make-lint-core.mjs';
 
-const ORG = { '@type': 'Organization', name: 'READ FRANCE SAS', url: 'https://outils.vread.fr/', email: 'octave@vread.fr' };
+const ORG = { '@type': 'Organization', '@id': 'https://jalonel.com/#org', name: 'Jalonel', url: 'https://jalonel.com/', parentOrganization: { '@type': 'Organization', name: 'READ FRANCE SAS', identifier: 'SIREN 988741773' } };
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const pretty = (s) => s.replace(/\[\^[^\]]*\]\{\d+,\d+\}\??/g, '…').replace(/\\\\s\??/g, ' ').replace(/\\s\??/g, ' ').replace(/\(\?:/g, '(').replace(/\\/g, '');
 
 export default {
   repo: 'sans-tic',
   site: 'sans-tic',
+  origin: 'https://sans-tic.jalonel.com',
+  indexNowKeys: ['5be19f56d46ca3d2553bee28ebfa8edd'],
   brand: 'Sans Tic',
   logo: 'Sans <span>Tic</span>',
   accent: '#9a3412',

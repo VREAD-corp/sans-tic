@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://outils.vread.fr/sans-tic/sitemap.xml
+Sitemap: https://sans-tic.jalonel.com/sitemap.xml

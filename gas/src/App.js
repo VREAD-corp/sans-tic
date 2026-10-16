@@ -2,6 +2,7 @@
 var APP = {
   name: 'Sans Tic',
   site: 'sans-tic',
+  host: 'sans-tic.jalonel.com',               // public site (brand Jalonel); outils.vread.fr/<site>/ redirects here
   tz: 'Europe/Paris',
   sheetTitle: 'Sans Tic : pré-commandes et statistiques (READ FRANCE SAS)',
   consentVersion: 'pc-2026-10-13',

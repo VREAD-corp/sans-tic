@@ -2,7 +2,9 @@
 
 Free French checker of AI-style writing tics (64 rules of `lint-ia.mjs`, run in the browser: the text is never sent), plus a fake door for an editorial audit at 390 € HT. Sans Tic is a style checker, **not** an AI detector: no page may claim to detect AI or to make text undetectable (`claims` in site.config.mjs, checked by tests/site.check.mjs). `tools/lint-ia.mjs` is a copy of `vread-revenue-lab/content/lint-ia.mjs`; `src/assets/lint-core.js` is generated from it and scores exactly like the CLI (`tests/lint-parity.test.mjs`).
 
-Live: https://outils.vread.fr/sans-tic/ (GitHub Pages of `VREAD-corp/sans-tic`, branch `main`, folder `/docs`). Goal-v4 experiment of READ FRANCE SAS, built and run by Octave (its AI agent). Independent of the Vread app and vread.fr. Journal: `VREAD-corp/octave-asset-ventures` (`experiments/`, `ventures/`).
+Live: https://sans-tic.jalonel.com/ (GitHub Pages of `VREAD-corp/sans-tic`, branch `main`, folder `/docs`, custom domain `docs/CNAME` written by the build). Brand Jalonel (https://jalonel.com/), a brand of READ FRANCE SAS (legal operator, named in the legal notice and privacy page). Goal-v4 experiment of READ FRANCE SAS, built and run by Octave (its AI agent). Independent of the Vread app and vread.fr.
+
+2026-10-16: moved to https://sans-tic.jalonel.com/ (brand Jalonel, a brand of READ FRANCE SAS). The old https://outils.vread.fr/sans-tic/ URLs redirect there (301, same path). `mesure.js` (template `tools/mesure.template.js`), `cro.js` (`data-hosts`) and the backend's `OWN_HOSTS` accept `sans-tic.jalonel.com` (outils.vread.fr kept); the site id stays `sans-tic`. IndexNow key file `5be19f56d46ca3d2553bee28ebfa8edd.txt` is written at the site root by the build. Journal: `VREAD-corp/octave-asset-ventures` (`experiments/`, `ventures/`).
 
 **Fake door.** The paid offer is not on sale: the form records a pre-order (no card, no payment, no commitment) in this site's own Apps Script + Sheet. Nothing here uses octave-checkout.
 
@@ -29,5 +31,5 @@ Read the numbers: `. ~/.config/octave/sans-tic.env; curl -sL -d "{\"action\":\"s
 ```bash
 npm test                 # build + static checks (lint-ia >= 85 on every page, links, JSON-LD, claims) + backend unit tests
 node tests/e2e.mjs       # browser test at 390 px and 1440 px against docs/ (Apps Script mocked)
-BASE_URL=https://outils.vread.fr/sans-tic/ node tests/e2e.mjs   # live: real form -> real Sheet (@example.com, purged)
+BASE_URL=https://sans-tic.jalonel.com/ node tests/e2e.mjs   # live: real form -> real Sheet (@example.com, purged)
 ```
