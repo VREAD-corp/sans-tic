@@ -1,18 +1,18 @@
 <!--meta {"path": "/", "page": "home", "title": "Sans Tic : repérer les tics d'écriture IA dans un texte français (gratuit)", "description": "Collez un texte en français : Sans Tic relève 64 tics d'écriture typiques des textes générés, donne un score sur 100 et explique chaque correction. Gratuit, le texte reste dans votre navigateur.", "scripts": ["lint-core.js", "checker.js"]}-->
 <h1>Repérez les tics d'écriture IA dans vos textes en français</h1>
-<p class="lead">Collez une page web, un article ou un e-mail de prospection. Sans Tic relève les formules toutes faites, les tirets longs en série et les énumérations par trois, puis donne un score sur 100 avec une explication pour chaque point retiré.</p>
+<p class="lead">Collez un article, une page web ou un e-mail : score sur 100 et explication de chaque point retiré.</p>
 
 <section id="outil" class="card">
 <label for="text">Votre texte (20 mots minimum)</label>
 <textarea id="text" spellcheck="false" placeholder="Collez ici votre texte en français…"></textarea>
-<p class="hint">L'analyse tourne dans votre navigateur. Le texte n'est envoyé à aucun serveur et n'est pas conservé.</p>
 <div class="row"><button class="btn" id="run" type="button">Analyser le texte</button><button class="btn ghost" id="sample" type="button">Essayer avec un exemple</button></div>
+<p class="hint">L'analyse tourne dans votre navigateur. Le texte n'est envoyé à aucun serveur et n'est pas conservé.</p>
 </section>
 <div id="result" hidden aria-live="polite"></div>
 
 <section id="mesure">
 <h2>Ce que mesure le score</h2>
-<p>Le score part de 100. Chaque règle retire des points, avec un plafond par famille pour qu'une seule habitude ne fasse pas tout chuter. Les 64 règles (49 en français, 15 en anglais) couvrent quatre familles :</p>
+<p>Sans Tic relève les formules toutes faites, les tirets longs en série et les énumérations par trois. Le score part de 100. Chaque règle retire des points, avec un plafond par famille pour qu'une seule habitude ne fasse pas tout chuter. Les 64 règles (49 en français, 15 en anglais) couvrent quatre familles :</p>
 <ul>
 <li>les formules qui remplacent une information (<code>il convient de noter</code>, <code>en somme</code>) : 4 points chacune ;</li>
 <li>les mots surutilisés (<code>optimiser</code>, <code>notamment</code>), tolérés une fois par tranche de 150 mots ;</li>
