@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://sans-tic.jalonel.com/audit/</loc><lastmod>2026-10-16</lastmod></url>
-  <url><loc>https://sans-tic.jalonel.com/confidentialite/</loc><lastmod>2026-10-16</lastmod></url>
-  <url><loc>https://sans-tic.jalonel.com/</loc><lastmod>2026-10-16</lastmod></url>
-  <url><loc>https://sans-tic.jalonel.com/mentions-legales/</loc><lastmod>2026-10-16</lastmod></url>
-  <url><loc>https://sans-tic.jalonel.com/regles/</loc><lastmod>2026-10-16</lastmod></url>
+  <url><loc>https://sans-tic.jalonel.com/audit/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://sans-tic.jalonel.com/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://sans-tic.jalonel.com/regles/</loc><lastmod>2026-10-18</lastmod></url>
 </urlset>
