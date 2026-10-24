@@ -8,6 +8,8 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 const pretty = (s) => s.replace(/\[\^[^\]]*\]\{\d+,\d+\}\??/g, '…').replace(/\\\\s\??/g, ' ').replace(/\\s\??/g, ' ').replace(/\(\?:/g, '(').replace(/\\/g, '');
 
 export default {
+  // En pause depuis le 24/10/2026 (décision des fondateurs, recentrage Jalonel): noindex, banner, pre-order form closed.
+  paused: true,
   repo: 'sans-tic',
   site: 'sans-tic',
   origin: 'https://sans-tic.jalonel.com',

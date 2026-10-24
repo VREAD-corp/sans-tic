@@ -107,3 +107,10 @@ mark.dash { background: var(--mark-dash); } mark.triad { background: var(--mark-
   .card { padding: 14px; }
   .score b { font-size: 2.4rem; }
 }
+
+/* Pause (2026-10-24) */
+.jal-pause { background: #f3f4f6; border-bottom: 1px solid #d1d5db; color: #1f2937; font-size: .95rem; padding: .6rem 1rem; text-align: center; }
+.jal-pause p { margin: 0; }
+.jal-pause a { color: inherit; text-decoration: underline; }
+.msg.pause-note { display: block; background: #f3f4f6; color: #1f2937; border: 1px solid #d1d5db; }
+.pause-fs { border: 0; padding: 0; margin: 0; min-width: 0; opacity: .6; }

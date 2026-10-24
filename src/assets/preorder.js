@@ -3,6 +3,8 @@
   var S = window.SITE || {};
   var f = document.getElementById('preorder');
   if (!f) return;
+  // Paused (2026-10-24): no new request is sent.
+  if (S.paused || f.hasAttribute('data-paused')) { f.addEventListener('submit', function (ev) { ev.preventDefault(); }); return; }
   var msg = document.getElementById('preorder-msg');
   var btn = f.querySelector('button[type=submit]');
   var siren = f.querySelector('[name=siren]');

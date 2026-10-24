@@ -22,7 +22,13 @@ for (const f of files) {
   if (!d || d[1].length < 50 || d[1].length > 200) err(f, 'description length ' + (d ? d[1].length : 0));
   if ((h.match(/<h1[\s>]/g) || []).length !== 1) err(f, 'exactly one h1');
   const noindex = /<meta name="robots" content="noindex/.test(h);
-  if (!is404 && noindex && sitemap.includes('<loc>' + SITE.origin)) { const c0 = h.match(/<link rel="canonical" href="([^"]+)"/); if (c0 && sitemap.includes('<loc>' + c0[1] + '</loc>')) err(f, 'noindex page in sitemap'); }
+  if (SITE.paused) {
+    if ((h.match(/<meta name="robots"/g) || []).length !== 1 || !h.includes('<meta name="robots" content="noindex">')) err(f, 'paused: exactly one robots noindex');
+    if (!h.includes('<div class="jal-pause" role="note">')) err(f, 'paused: banner');
+    if (/<form id="preorder"/.test(h) && !/<form id="preorder"[^>]*data-paused="1"><fieldset class="pause-fs" disabled>/.test(h)) err(f, 'paused: pre-order form open');
+  }
+  if (!SITE.paused && !is404 && noindex && sitemap.includes('<loc>' + SITE.origin)) { const c0 = h.match(/<link rel="canonical" href="([^"]+)"/); if (c0 && sitemap.includes('<loc>' + c0[1] + '</loc>')) err(f, 'noindex page in sitemap'); }
+  if (!is404 && SITE.paused) { const c = h.match(/<link rel="canonical" href="([^"]+)"/); if (!c || !c[1].startsWith(SITE.origin + '/')) err(f, 'paused: canonical'); }
   if (!is404 && !noindex) {
     const c = h.match(/<link rel="canonical" href="([^"]+)"/);
     if (!c) err(f, 'canonical'); else if (!c[1].startsWith(SITE.origin + '/')) err(f, 'canonical not on ' + SITE.origin); else if (!sitemap.includes('<loc>' + c[1] + '</loc>')) err(f, 'not in sitemap: ' + c[1]);

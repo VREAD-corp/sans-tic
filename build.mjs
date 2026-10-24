@@ -51,10 +51,15 @@ const rel = (from, to) => {
 };
 const asset = (p, f) => rel(p.path, 'assets/' + f) + '?v=' + ver[f];
 
+// Pause (founders' decision, 2026-10-24): every page noindex, a banner, request forms closed. Tracking unchanged.
+const PAUSE_BANNER = '<div class="jal-pause" role="note"><p>Ce service est en pause. Autres outils : <a href="https://jalonel.com/">jalonel.com</a></p></div>';
+const pauseForms = (html) => html.replace(/(<form id="preorder"[^>]*?)>([\s\S]*?)<\/form>/g, (all, open, inner) =>
+  `<p class="msg pause-note">Les nouvelles demandes sont fermées pendant la pause.</p>\n${open} data-paused="1"><fieldset class="pause-fs" disabled>${inner}</fieldset></form>`);
+
 function layout(p) {
   const url = ORIGIN + BASE + p.path.replace(/^\//, '');
   const R = (to) => rel(p.path, to);
-  const body = p.body.replace(/\{\{([a-z_]+):([^}]*)\}\}/g, (all, k, v) => (k === 'href' ? R(v) : k === 'asset' ? asset(p, v) : all))
+  const body = (SITE.paused ? pauseForms(p.body) : p.body).replace(/\{\{([a-z_]+):([^}]*)\}\}/g, (all, k, v) => (k === 'href' ? R(v) : k === 'asset' ? asset(p, v) : all))
     .replace(/\{\{api\}\}/g, SITE.api);
   const nav = SITE.nav.map(([label, to]) => `<a href="${R(to)}"${to === p.path ? ' aria-current="page"' : ''}>${esc(label)}</a>`).join('');
   const schema = [].concat(p.schema || [], SITE.schema ? SITE.schema(p, url) : []).filter(Boolean)
@@ -66,7 +71,7 @@ function layout(p) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(p.title)}</title>
 <meta name="description" content="${esc(p.description)}">
-${p.noindex ? '<meta name="robots" content="noindex, follow">\n' : ''}${p.path === '/404.html' ? '' : `<link rel="canonical" href="${url}">`}
+${SITE.paused ? '<meta name="robots" content="noindex">\n' : p.noindex ? '<meta name="robots" content="noindex, follow">\n' : ''}${p.path === '/404.html' ? '' : `<link rel="canonical" href="${url}">`}
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="${esc(SITE.brand)}">
@@ -76,7 +81,7 @@ ${p.noindex ? '<meta name="robots" content="noindex, follow">\n' : ''}${p.path =
 <meta name="theme-color" content="${SITE.accent}">
 <link rel="icon" href="${asset(p, 'icon.svg')}" type="image/svg+xml">
 <link rel="stylesheet" href="${asset(p, 'style.css')}">
-<script>window.SITE = ${JSON.stringify({ site: SITE.site, api: SITE.api, xp: SITE.variantXp, consent: SITE.consentVersion, base: R('/'), mail: 'contact@jalonel.com' })};
+<script>window.SITE = ${JSON.stringify({ site: SITE.site, api: SITE.api, xp: SITE.variantXp, consent: SITE.consentVersion, paused: !!SITE.paused, base: R('/'), mail: 'contact@jalonel.com' })};
 window.OCTAVE_XP = ${JSON.stringify(SITE.xp)};</script>
 <script src="${asset(p, 'cro.js')}" data-site="${SITE.site}" data-api="${SITE.api}" data-hosts="${HOST}" data-cta="a.btn,button.btn"></script>
 <script src="${asset(p, 'mesure.js')}" defer></script>
@@ -85,7 +90,7 @@ ${schema}
 </head>
 <body data-page="${esc(p.page || '')}">
 <a class="skip" href="#main">Aller au contenu</a>
-<header class="top"><div class="wrap">
+${SITE.paused ? PAUSE_BANNER + '\n' : ''}<header class="top"><div class="wrap">
 <a class="logo" href="${R('/')}">${SITE.logo}</a>
 <nav aria-label="Navigation principale">${nav}</nav>
 </div></header>

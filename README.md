@@ -1,5 +1,8 @@
 # Sans Tic
 
+**En pause depuis le 24/10/2026** (décision des fondateurs, recentrage Jalonel) : noindex, bandeau, demandes fermées ; tracking conservé.
+
+
 Free French checker of AI-style writing tics (64 rules of `lint-ia.mjs`, run in the browser: the text is never sent), plus a fake door for an editorial audit at 390 € HT. Sans Tic is a style checker, **not** an AI detector: no page may claim to detect AI or to make text undetectable (`claims` in site.config.mjs, checked by tests/site.check.mjs). `tools/lint-ia.mjs` is a copy of `vread-revenue-lab/content/lint-ia.mjs`; `src/assets/lint-core.js` is generated from it and scores exactly like the CLI (`tests/lint-parity.test.mjs`).
 
 Live: https://sans-tic.jalonel.com/ (GitHub Pages of `VREAD-corp/sans-tic`, branch `main`, folder `/docs`, custom domain `docs/CNAME` written by the build). Brand Jalonel (https://jalonel.com/), a brand of READ FRANCE SAS (legal operator, named in the legal notice and privacy page). Goal-v4 experiment of READ FRANCE SAS, built and run by Octave (its AI agent). Independent of the Vread app and vread.fr.
